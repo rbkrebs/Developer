@@ -11,17 +11,18 @@ class ViewController: UIViewController {
     
     
     var counter : Int = 0
+    
         
     enum Option{
         
-        case bolinha
-        case cruzado
+        case nought
+        case cross
         
-        var simbolo : String {
+        var symbol : String {
             switch self {
-            case .bolinha:
+            case .nought:
                 return "⭕️"
-            case .cruzado:
+            case .cross:
                 return  "❌"
             }
         }
@@ -31,27 +32,49 @@ class ViewController: UIViewController {
     }
     
     
-    @IBOutlet var escolhas: [UIButton]!
+    @IBOutlet var options: [UIButton]!
     
-    let optionList: [Option] = []
+    var escolhas: [Int:Option] = [:]
     
-    @IBAction func optionUser(_ sender: UIButton) {
+    @IBAction func clickUser(_ sender: UIButton) {
         
-        if(counter<4){
-            
-            sender.setTitle(Option.cruzado.simbolo, for: UIControl.State.normal)
-                escolhas.remove(at: escolhas.firstIndex(of: sender)!)
-               
-                let robo: UIButton = escolhas.randomElement()!
-            robo.setTitle(Option.bolinha.simbolo, for: UIControl.State.normal)
-                escolhas.remove(at: escolhas.firstIndex(of: robo)!)
-                counter += 1
-            
-        }
-       
+        saveSelectedOptions(sender: sender, option: Option.cross)
+        sender.setTitle(Option.cross.symbol, for: UIControl.State.normal)
+           
+    }
     
+    func saveSelectedOptions(sender: UIButton, option : Option){
+        
+    
+        let indexOfOptions = options.firstIndex(of: sender)!
+       
+        escolhas[indexOfOptions] = option
+        
+        print(checkHasWinner())
+       
+    }
+    
+    func checkHasWinner() -> Bool{
+        
+        let variable: [Set<Int>] = [[0,1,2],[3,4,5],[6,7,8],[0,4,8],[2,4,6],[0,3,6],[1,4,7],[2,6,8]]
+        var winner: Bool = false
+        for i in variable{
+            
+            winner = i.isSubset(of: escolhas.keys)
+            if winner{
+                return winner
+            }
+           
+        }
+        
+        return winner
+       
+        
+        
         
     }
+    
+    
     
     
 }

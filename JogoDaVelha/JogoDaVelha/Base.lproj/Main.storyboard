@@ -28,7 +28,7 @@
                                                 <color key="backgroundColor" systemColor="systemIndigoColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                                 <connections>
-                                                    <action selector="optionUser:" destination="BYZ-38-t0r" eventType="touchUpInside" id="K4g-wQ-yum"/>
+                                                    <action selector="clickUser:" destination="BYZ-38-t0r" eventType="touchUpInside" id="K4g-wQ-yum"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ALR-Kh-IJc">
@@ -36,7 +36,7 @@
                                                 <color key="backgroundColor" systemColor="systemIndigoColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                                 <connections>
-                                                    <action selector="optionUser:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4Bf-Ea-oF7"/>
+                                                    <action selector="clickUser:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4Bf-Ea-oF7"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q6J-RQ-etV">
@@ -44,7 +44,7 @@
                                                 <color key="backgroundColor" systemColor="systemIndigoColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                                 <connections>
-                                                    <action selector="optionUser:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HcU-IA-Wqd"/>
+                                                    <action selector="clickUser:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HcU-IA-Wqd"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -57,7 +57,7 @@
                                                 <color key="backgroundColor" systemColor="systemIndigoColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                                 <connections>
-                                                    <action selector="optionUser:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qxk-4l-DEW"/>
+                                                    <action selector="clickUser:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qxk-4l-DEW"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T1u-ff-gnF">
@@ -65,7 +65,7 @@
                                                 <color key="backgroundColor" systemColor="systemIndigoColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                                 <connections>
-                                                    <action selector="optionUser:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ivP-cX-lZM"/>
+                                                    <action selector="clickUser:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ivP-cX-lZM"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kz7-6K-cHK">
@@ -73,7 +73,7 @@
                                                 <color key="backgroundColor" systemColor="systemIndigoColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                                 <connections>
-                                                    <action selector="optionUser:" destination="BYZ-38-t0r" eventType="touchUpInside" id="n2Y-eh-pMf"/>
+                                                    <action selector="clickUser:" destination="BYZ-38-t0r" eventType="touchUpInside" id="n2Y-eh-pMf"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -86,7 +86,7 @@
                                                 <color key="backgroundColor" systemColor="systemIndigoColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                                 <connections>
-                                                    <action selector="optionUser:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Xc2-5m-81e"/>
+                                                    <action selector="clickUser:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Xc2-5m-81e"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qK8-L5-lUs">
@@ -94,7 +94,7 @@
                                                 <color key="backgroundColor" systemColor="systemIndigoColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                                 <connections>
-                                                    <action selector="optionUser:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8pS-Ea-jkW"/>
+                                                    <action selector="clickUser:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8pS-Ea-jkW"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZMr-Hz-rsk">
@@ -102,7 +102,7 @@
                                                 <color key="backgroundColor" systemColor="systemIndigoColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                                 <connections>
-                                                    <action selector="optionUser:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Oo5-yk-vaI"/>
+                                                    <action selector="clickUser:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Oo5-yk-vaI"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -120,15 +120,15 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outletCollection property="escolhas" destination="OsK-14-XuK" collectionClass="NSMutableArray" id="3aZ-TJ-X5A"/>
-                        <outletCollection property="escolhas" destination="ALR-Kh-IJc" collectionClass="NSMutableArray" id="Nk5-Ks-7Kb"/>
-                        <outletCollection property="escolhas" destination="Q6J-RQ-etV" collectionClass="NSMutableArray" id="KCt-5m-Yag"/>
-                        <outletCollection property="escolhas" destination="Tbb-Ud-Rac" collectionClass="NSMutableArray" id="gfb-1Z-jKX"/>
-                        <outletCollection property="escolhas" destination="T1u-ff-gnF" collectionClass="NSMutableArray" id="8JH-EU-J8l"/>
-                        <outletCollection property="escolhas" destination="Kz7-6K-cHK" collectionClass="NSMutableArray" id="NiV-S9-gtf"/>
-                        <outletCollection property="escolhas" destination="XT2-7k-aE3" collectionClass="NSMutableArray" id="CAV-nF-rCB"/>
-                        <outletCollection property="escolhas" destination="qK8-L5-lUs" collectionClass="NSMutableArray" id="pup-7Z-WTs"/>
-                        <outletCollection property="escolhas" destination="ZMr-Hz-rsk" collectionClass="NSMutableArray" id="ooa-ZO-V4x"/>
+                        <outletCollection property="options" destination="OsK-14-XuK" collectionClass="NSMutableArray" id="3aZ-TJ-X5A"/>
+                        <outletCollection property="options" destination="ALR-Kh-IJc" collectionClass="NSMutableArray" id="Nk5-Ks-7Kb"/>
+                        <outletCollection property="options" destination="Q6J-RQ-etV" collectionClass="NSMutableArray" id="KCt-5m-Yag"/>
+                        <outletCollection property="options" destination="Tbb-Ud-Rac" collectionClass="NSMutableArray" id="gfb-1Z-jKX"/>
+                        <outletCollection property="options" destination="T1u-ff-gnF" collectionClass="NSMutableArray" id="8JH-EU-J8l"/>
+                        <outletCollection property="options" destination="Kz7-6K-cHK" collectionClass="NSMutableArray" id="NiV-S9-gtf"/>
+                        <outletCollection property="options" destination="XT2-7k-aE3" collectionClass="NSMutableArray" id="CAV-nF-rCB"/>
+                        <outletCollection property="options" destination="qK8-L5-lUs" collectionClass="NSMutableArray" id="pup-7Z-WTs"/>
+                        <outletCollection property="options" destination="ZMr-Hz-rsk" collectionClass="NSMutableArray" id="ooa-ZO-V4x"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

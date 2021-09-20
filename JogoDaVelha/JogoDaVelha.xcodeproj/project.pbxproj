@@ -15,7 +15,8 @@
 		20072A7626F535CD0059E007 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20072A7426F535CD0059E007 /* LaunchScreen.storyboard */; };
 		20072A8126F535CE0059E007 /* JogoDaVelhaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20072A8026F535CE0059E007 /* JogoDaVelhaTests.swift */; };
 		20072A8C26F535CE0059E007 /* JogoDaVelhaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20072A8B26F535CE0059E007 /* JogoDaVelhaUITests.swift */; };
-		20072A9A26F537CC0059E007 /* UserOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20072A9926F537CC0059E007 /* UserOption.swift */; };
+		20072A9C26F56E9B0059E007 /* Jogo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20072A9B26F56E9B0059E007 /* Jogo.swift */; };
+		20072A9E26F56EF10059E007 /* Escolha.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20072A9D26F56EF10059E007 /* Escolha.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,7 +51,8 @@
 		20072A8726F535CE0059E007 /* JogoDaVelhaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JogoDaVelhaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		20072A8B26F535CE0059E007 /* JogoDaVelhaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JogoDaVelhaUITests.swift; sourceTree = "<group>"; };
 		20072A8D26F535CE0059E007 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		20072A9926F537CC0059E007 /* UserOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserOption.swift; path = ../../../UserOption.swift; sourceTree = "<group>"; };
+		20072A9B26F56E9B0059E007 /* Jogo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Jogo.swift; sourceTree = "<group>"; };
+		20072A9D26F56EF10059E007 /* Escolha.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Escolha.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,7 +110,8 @@
 				20072A7226F535CD0059E007 /* Assets.xcassets */,
 				20072A7426F535CD0059E007 /* LaunchScreen.storyboard */,
 				20072A7726F535CD0059E007 /* Info.plist */,
-				20072A9926F537CC0059E007 /* UserOption.swift */,
+				20072A9B26F56E9B0059E007 /* Jogo.swift */,
+				20072A9D26F56EF10059E007 /* Escolha.swift */,
 			);
 			path = JogoDaVelha;
 			sourceTree = "<group>";
@@ -261,10 +264,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20072A9E26F56EF10059E007 /* Escolha.swift in Sources */,
 				20072A6E26F535CC0059E007 /* ViewController.swift in Sources */,
+				20072A9C26F56E9B0059E007 /* Jogo.swift in Sources */,
 				20072A6A26F535CC0059E007 /* AppDelegate.swift in Sources */,
 				20072A6C26F535CC0059E007 /* SceneDelegate.swift in Sources */,
-				20072A9A26F537CC0059E007 /* UserOption.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

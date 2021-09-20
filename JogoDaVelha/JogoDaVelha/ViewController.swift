@@ -26,9 +26,6 @@ class ViewController: UIViewController {
                 return  "❌"
             }
         }
-        
-    
-        
     }
     
     
@@ -38,19 +35,46 @@ class ViewController: UIViewController {
     
     @IBAction func clickUser(_ sender: UIButton) {
         
-        saveSelectedOptions(sender: sender, option: Option.cross)
-        sender.setTitle(Option.cross.symbol, for: UIControl.State.normal)
+        if(counter<4){
+
+            sender.setTitle(Option.cross.symbol, for: UIControl.State.normal)
+            
+            saveSelectedOptions(sender: options.firstIndex(of: sender)!, option: Option.cross)
+           
+
+            var robo: UIButton = options.randomElement()!
+            
+            while(robo.currentTitle != nil ){
+               
+                robo = options.randomElement()!
+                
+                
+            }
+            robo.setTitle(Option.nought.symbol, for: UIControl.State.normal)
+            
+            saveSelectedOptions(sender: options.firstIndex(of: robo)!, option: Option.nought)
+            
+            counter += 1
+
+                }
            
     }
     
-    func saveSelectedOptions(sender: UIButton, option : Option){
+    func saveSelectedOptions(sender: Int, option : Option){
         
     
-        let indexOfOptions = options.firstIndex(of: sender)!
+        let indexOfOptions = sender
        
         escolhas[indexOfOptions] = option
         
-        print(checkHasWinner())
+        if checkHasWinner(){
+            
+            let alert = UIAlertController(title: "Cabô o jogo", message: "Pressione clear para recomeçar", preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+            
+        }
+       
        
     }
     
@@ -58,24 +82,32 @@ class ViewController: UIViewController {
         
         let variable: [Set<Int>] = [[0,1,2],[3,4,5],[6,7,8],[0,4,8],[2,4,6],[0,3,6],[1,4,7],[2,6,8]]
         var winner: Bool = false
+        var robo: [Int] = []
+        var player: [Int] = []
+        
+        for escolha in escolhas{
+            
+            if escolha.value == Option.nought{
+                robo.append(escolha.key)
+            }else{
+                player.append(escolha.key)
+            }
+        }
+    
         for i in variable{
             
-            winner = i.isSubset(of: escolhas.keys)
-            if winner{
-                return winner
+           
+            if  i.isSubset(of: robo){
+                winner = true
+            }
+            else if  i.isSubset(of: player){
+                winner = true
             }
            
         }
         
         return winner
-       
-        
-        
-        
+    
     }
-    
-    
-    
-    
 }
 

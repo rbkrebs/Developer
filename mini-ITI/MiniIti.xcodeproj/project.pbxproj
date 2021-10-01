@@ -12,6 +12,8 @@
 		208DB39C27062DBD00CFF747 /* OpcoesEntrada.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208DB39B27062DBD00CFF747 /* OpcoesEntrada.swift */; };
 		208DB39E27062DE000CFF747 /* OpcoesIti.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208DB39D27062DE000CFF747 /* OpcoesIti.swift */; };
 		208DB3A02706309B00CFF747 /* TipoChavePix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208DB39F2706309B00CFF747 /* TipoChavePix.swift */; };
+		208DB3B2270675C100CFF747 /* Conta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208DB3B1270675C100CFF747 /* Conta.swift */; };
+		208DB3D827072C2000CFF747 /* Sistema.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208DB3D727072C2000CFF747 /* Sistema.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -27,12 +29,14 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		208DB38F27061B8800CFF747 /* mini-ITI */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "mini-ITI"; sourceTree = BUILT_PRODUCTS_DIR; };
+		208DB38F27061B8800CFF747 /* MiniIti */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = MiniIti; sourceTree = BUILT_PRODUCTS_DIR; };
 		208DB39227061B8800CFF747 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		208DB399270627FD00CFF747 /* Cliente.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cliente.swift; sourceTree = "<group>"; };
 		208DB39B27062DBD00CFF747 /* OpcoesEntrada.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpcoesEntrada.swift; sourceTree = "<group>"; };
 		208DB39D27062DE000CFF747 /* OpcoesIti.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpcoesIti.swift; sourceTree = "<group>"; };
 		208DB39F2706309B00CFF747 /* TipoChavePix.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipoChavePix.swift; sourceTree = "<group>"; };
+		208DB3B1270675C100CFF747 /* Conta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Conta.swift; sourceTree = "<group>"; };
+		208DB3D727072C2000CFF747 /* Sistema.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sistema.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,7 +53,7 @@
 		208DB38627061B8800CFF747 = {
 			isa = PBXGroup;
 			children = (
-				208DB39127061B8800CFF747 /* mini-ITI */,
+				208DB39127061B8800CFF747 /* MiniITI */,
 				208DB39027061B8800CFF747 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -57,12 +61,12 @@
 		208DB39027061B8800CFF747 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				208DB38F27061B8800CFF747 /* mini-ITI */,
+				208DB38F27061B8800CFF747 /* MiniIti */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		208DB39127061B8800CFF747 /* mini-ITI */ = {
+		208DB39127061B8800CFF747 /* MiniITI */ = {
 			isa = PBXGroup;
 			children = (
 				208DB39227061B8800CFF747 /* main.swift */,
@@ -70,16 +74,18 @@
 				208DB399270627FD00CFF747 /* Cliente.swift */,
 				208DB39B27062DBD00CFF747 /* OpcoesEntrada.swift */,
 				208DB39F2706309B00CFF747 /* TipoChavePix.swift */,
+				208DB3B1270675C100CFF747 /* Conta.swift */,
+				208DB3D727072C2000CFF747 /* Sistema.swift */,
 			);
-			path = "mini-ITI";
+			path = MiniITI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		208DB38E27061B8800CFF747 /* mini-ITI */ = {
+		208DB38E27061B8800CFF747 /* MiniIti */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 208DB39627061B8800CFF747 /* Build configuration list for PBXNativeTarget "mini-ITI" */;
+			buildConfigurationList = 208DB39627061B8800CFF747 /* Build configuration list for PBXNativeTarget "MiniIti" */;
 			buildPhases = (
 				208DB38B27061B8800CFF747 /* Sources */,
 				208DB38C27061B8800CFF747 /* Frameworks */,
@@ -89,9 +95,9 @@
 			);
 			dependencies = (
 			);
-			name = "mini-ITI";
+			name = MiniIti;
 			productName = "mini-ITI";
-			productReference = 208DB38F27061B8800CFF747 /* mini-ITI */;
+			productReference = 208DB38F27061B8800CFF747 /* MiniIti */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
@@ -108,7 +114,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 208DB38A27061B8800CFF747 /* Build configuration list for PBXProject "mini-ITI" */;
+			buildConfigurationList = 208DB38A27061B8800CFF747 /* Build configuration list for PBXProject "MiniIti" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -121,7 +127,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				208DB38E27061B8800CFF747 /* mini-ITI */,
+				208DB38E27061B8800CFF747 /* MiniIti */,
 			);
 		};
 /* End PBXProject section */
@@ -133,7 +139,9 @@
 			files = (
 				208DB39C27062DBD00CFF747 /* OpcoesEntrada.swift in Sources */,
 				208DB39E27062DE000CFF747 /* OpcoesIti.swift in Sources */,
+				208DB3D827072C2000CFF747 /* Sistema.swift in Sources */,
 				208DB39A270627FD00CFF747 /* Cliente.swift in Sources */,
+				208DB3B2270675C100CFF747 /* Conta.swift in Sources */,
 				208DB39327061B8800CFF747 /* main.swift in Sources */,
 				208DB3A02706309B00CFF747 /* TipoChavePix.swift in Sources */,
 			);
@@ -197,6 +205,7 @@
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = MiniITI;
 				SDKROOT = macosx;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -251,6 +260,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 11.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = MiniITI;
 				SDKROOT = macosx;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
@@ -261,6 +271,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SDKROOT)/usr/lib/swift",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -270,6 +284,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SDKROOT)/usr/lib/swift",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -278,7 +296,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		208DB38A27061B8800CFF747 /* Build configuration list for PBXProject "mini-ITI" */ = {
+		208DB38A27061B8800CFF747 /* Build configuration list for PBXProject "MiniIti" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				208DB39427061B8800CFF747 /* Debug */,
@@ -287,7 +305,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		208DB39627061B8800CFF747 /* Build configuration list for PBXNativeTarget "mini-ITI" */ = {
+		208DB39627061B8800CFF747 /* Build configuration list for PBXNativeTarget "MiniIti" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				208DB39727061B8800CFF747 /* Debug */,

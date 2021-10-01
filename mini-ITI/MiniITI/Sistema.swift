@@ -75,15 +75,26 @@ class Sistema{
             let escolha = readLine()!
             switch escolha {
             case "1":
-                print("Digite a conta para transfênria")
-                let conta: String = readLine()
-                print("Digite")
-                Cliente.buscaCliente(conta: <#T##String#>, senha: <#T##String#>)
-                print("1")
+                print("Digite a agência para transfênria")
+                let agencia: String = readLine()!
+                print("Digite o número da conta")
+                let conta: String =  readLine()!
+                if let clienteSortudo = Cliente.buscaConta(agencia: agencia, conta: conta){
+                    print("Informe o valor a ser depositado")
+                    let valor: String = readLine()!
+                    clienteSortudo.depositar(valor:valor)
+                }else{
+                    print("Conta não encontrada!")
+                }
+               
             case "2":print("1")
             case "3":print("1")
-            case "4":print("1")
-            case "5":print("1")
+            case "4":
+                print("Quanto você deseja depositar: R$")
+                let valor: String = readLine()!
+                cliente.depositar(valor: valor)
+            case "5":
+                print(cliente.verSaldo())
             case "6":print("1")
             case "7": clienteLogado = false
             default:

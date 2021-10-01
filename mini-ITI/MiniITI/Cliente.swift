@@ -87,6 +87,18 @@ class Cliente{
         return Cliente.listaClientes.filter{$0.senha == senha && $0.conta.conta == conta}.first ?? nil
     }
     
+    class func buscaConta(agencia: String, conta:String) -> Cliente?{
+        
+        return Cliente.listaClientes.filter{$0.conta.agencia == agencia && $0.conta.conta == conta}.first ?? nil
+        
+    }
+    
+    func depositar(valor: String){
+        
+        self.saldo += Double(valor)!
+        
+    }
+    
     
     
     

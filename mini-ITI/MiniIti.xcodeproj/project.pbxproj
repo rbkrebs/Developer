@@ -7,13 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		20765928270B71550053AF44 /* ClienteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20765927270B71550053AF44 /* ClienteController.swift */; };
+		2076592B270B75210053AF44 /* ClienteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2076592A270B75210053AF44 /* ClienteView.swift */; };
+		2076592D270B75CA0053AF44 /* SistemaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2076592C270B75CA0053AF44 /* SistemaView.swift */; };
 		208DB39327061B8800CFF747 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208DB39227061B8800CFF747 /* main.swift */; };
 		208DB39A270627FD00CFF747 /* Cliente.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208DB399270627FD00CFF747 /* Cliente.swift */; };
 		208DB39C27062DBD00CFF747 /* OpcoesEntrada.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208DB39B27062DBD00CFF747 /* OpcoesEntrada.swift */; };
 		208DB39E27062DE000CFF747 /* OpcoesIti.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208DB39D27062DE000CFF747 /* OpcoesIti.swift */; };
 		208DB3A02706309B00CFF747 /* TipoChavePix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208DB39F2706309B00CFF747 /* TipoChavePix.swift */; };
 		208DB3B2270675C100CFF747 /* Conta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208DB3B1270675C100CFF747 /* Conta.swift */; };
-		208DB3D827072C2000CFF747 /* Sistema.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208DB3D727072C2000CFF747 /* Sistema.swift */; };
+		208DB3D827072C2000CFF747 /* SistemaController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208DB3D727072C2000CFF747 /* SistemaController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -29,6 +32,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		20765927270B71550053AF44 /* ClienteController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ClienteController.swift; path = ../../../../ClienteController.swift; sourceTree = "<group>"; };
+		2076592A270B75210053AF44 /* ClienteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClienteView.swift; sourceTree = "<group>"; };
+		2076592C270B75CA0053AF44 /* SistemaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SistemaView.swift; sourceTree = "<group>"; };
 		208DB38F27061B8800CFF747 /* MiniIti */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = MiniIti; sourceTree = BUILT_PRODUCTS_DIR; };
 		208DB39227061B8800CFF747 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		208DB399270627FD00CFF747 /* Cliente.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cliente.swift; sourceTree = "<group>"; };
@@ -36,7 +42,7 @@
 		208DB39D27062DE000CFF747 /* OpcoesIti.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpcoesIti.swift; sourceTree = "<group>"; };
 		208DB39F2706309B00CFF747 /* TipoChavePix.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipoChavePix.swift; sourceTree = "<group>"; };
 		208DB3B1270675C100CFF747 /* Conta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Conta.swift; sourceTree = "<group>"; };
-		208DB3D727072C2000CFF747 /* Sistema.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sistema.swift; sourceTree = "<group>"; };
+		208DB3D727072C2000CFF747 /* SistemaController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SistemaController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,8 +59,31 @@
 		20765925270B33D40053AF44 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				2076592A270B75210053AF44 /* ClienteView.swift */,
+				2076592C270B75CA0053AF44 /* SistemaView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		20765926270B71310053AF44 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				208DB3D727072C2000CFF747 /* SistemaController.swift */,
+				20765927270B71550053AF44 /* ClienteController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		20765929270B74D80053AF44 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				208DB39D27062DE000CFF747 /* OpcoesIti.swift */,
+				208DB399270627FD00CFF747 /* Cliente.swift */,
+				208DB39B27062DBD00CFF747 /* OpcoesEntrada.swift */,
+				208DB39F2706309B00CFF747 /* TipoChavePix.swift */,
+				208DB3B1270675C100CFF747 /* Conta.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		208DB38627061B8800CFF747 = {
@@ -76,14 +105,10 @@
 		208DB39127061B8800CFF747 /* MiniITI */ = {
 			isa = PBXGroup;
 			children = (
+				20765929270B74D80053AF44 /* Models */,
+				20765926270B71310053AF44 /* Controllers */,
 				20765925270B33D40053AF44 /* View */,
 				208DB39227061B8800CFF747 /* main.swift */,
-				208DB39D27062DE000CFF747 /* OpcoesIti.swift */,
-				208DB399270627FD00CFF747 /* Cliente.swift */,
-				208DB39B27062DBD00CFF747 /* OpcoesEntrada.swift */,
-				208DB39F2706309B00CFF747 /* TipoChavePix.swift */,
-				208DB3B1270675C100CFF747 /* Conta.swift */,
-				208DB3D727072C2000CFF747 /* Sistema.swift */,
 			);
 			path = MiniITI;
 			sourceTree = "<group>";
@@ -147,9 +172,12 @@
 			files = (
 				208DB39C27062DBD00CFF747 /* OpcoesEntrada.swift in Sources */,
 				208DB39E27062DE000CFF747 /* OpcoesIti.swift in Sources */,
-				208DB3D827072C2000CFF747 /* Sistema.swift in Sources */,
+				2076592B270B75210053AF44 /* ClienteView.swift in Sources */,
+				20765928270B71550053AF44 /* ClienteController.swift in Sources */,
+				208DB3D827072C2000CFF747 /* SistemaController.swift in Sources */,
 				208DB39A270627FD00CFF747 /* Cliente.swift in Sources */,
 				208DB3B2270675C100CFF747 /* Conta.swift in Sources */,
+				2076592D270B75CA0053AF44 /* SistemaView.swift in Sources */,
 				208DB39327061B8800CFF747 /* main.swift in Sources */,
 				208DB3A02706309B00CFF747 /* TipoChavePix.swift in Sources */,
 			);

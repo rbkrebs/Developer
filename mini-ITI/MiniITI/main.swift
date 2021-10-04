@@ -12,7 +12,8 @@ let sistema: Sistema = Sistema()
 
 
 while(!Sistema.sairDoSistema){
-    sistema.inicializaSistema()
+
+  sistema.inicializaSistema()
 }
 
 

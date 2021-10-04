@@ -71,9 +71,9 @@ class Cliente: Comparable{
     func verSaldo() -> String{
         return
         """
-            \(self.nome)
-            \(self.conta.agencia)
-            \(self.conta.conta)
+            Nome: \(self.nome)
+            Agência: \(self.conta.agencia)
+            Conta: \(self.conta.conta)
                             
                         
                             \(saldo)
@@ -109,41 +109,17 @@ class Cliente: Comparable{
     }
     
     
-    class func buscaCliente(conta: String,senha:String) -> Cliente?{
-        
-        return Cliente.listaClientes.filter{$0.senha == senha && $0.conta.conta == conta}.first ?? nil
-    }
-    
-    class func buscaConta(agencia: String, conta:String) -> Cliente?{
-        
-        return Cliente.listaClientes.filter{$0.conta.agencia == agencia && $0.conta.conta == conta}.first ?? nil
-        
-    }
-    
     func depositar(valor: String){
         
         self.saldo += Double(valor)!
         
     }
     
-    func excluirConta() -> (Bool,String) {
+    func excluirConta(clienteRemovidoIndex: Int) {
         
-        if(clienteEstaDevendo()){
-            return (true, "Cliente possui débitos com o banco! Regularize já sua situação para continuar com a operação de exclusão")
-        }
-        else{
-            var clienteRemovidoIndex = 0
-            for (index, cliente) in Cliente.listaClientes.enumerated(){
-                if(cliente == self){
-                    
-                    clienteRemovidoIndex = index
-                }
-            }
             
-            Cliente.listaClientes.remove(at: clienteRemovidoIndex)
-            return (false, "")
-        }
-        
+        Cliente.listaClientes.remove(at: clienteRemovidoIndex)
+         
     }
     
     func clienteEstaDevendo() -> Bool{

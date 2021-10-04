@@ -11,23 +11,24 @@ import Foundation
 class Sistema{
     
     static var sairDoSistema: Bool = false
+    let clienteController = ClienteController()
+    let sistemaView = SistemaView()
+   
+    
     
     func inicializaSistema(){
         
-        print("************ Bem vindo ao mini-ITI *****************")
-        print("Escolha uma das opções abaixo")
-        OpcoesEntrada.listaOpcoes()
-        print("Sua escolha:")
-        if let op = readLine(){
+       
+        if let op = sistemaView.inicializaSistema(){
             switch op {
             case "1":
                 
                 if let clienteAutenticado = autenticaUsuario(){
                     acessaSistema(clienteAuth: clienteAutenticado)
                 }else{
-                    print("DADOS INVÁLIDOS")
+                    sistemaView.mensagemSistema(mensagem: "DADOS INVÁLIDOS")
+                  
                 }
-                
                 
             case "2":
                 
@@ -35,11 +36,11 @@ class Sistema{
                 acessaSistema(clienteAuth: clienteNovo)
                 
             case "3":
-                print("tchau")
+                sistemaView.mensagemSistema(mensagem: "Tchauzin!")
                 Sistema.sairDoSistema = true
                 
             default:
-                print("Opção inválida!")
+                sistemaView.mensagemSistema(mensagem: "Opção inválida")
                 Sistema.sairDoSistema = true
             }
             
@@ -49,12 +50,9 @@ class Sistema{
     
     private func autenticaUsuario() -> Cliente?{
         
-        print("Digite o número da conta")
-        let conta: String = readLine()!
-        print("Digite a sua senha")
-        let senha: String = readLine()!
+        let (conta, senha) = sistemaView.autenticacaoUsuario()
         
-        guard let clienteLogado: Cliente = (Cliente.buscaCliente(conta: conta, senha: senha))
+        guard let clienteLogado: Cliente = (clienteController.buscaCliente(conta: conta, senha: senha))
         else{
             
             return nil
@@ -67,37 +65,40 @@ class Sistema{
     private func acessaSistema(clienteAuth: Cliente){
         var cliente: Cliente? = clienteAuth
         var clienteLogado: Bool = true
-        print("************ VOCÊ ESTÁ LOGADO! **************")
-        print("Escolha uma das opções abaixo")
+        sistemaView.mensagemSistema(mensagem:
+        """
+                ************ VOCÊ ESTÁ LOGADO! **************"
+                        "Escolha uma das opções abaixo"
+
+        """)
+ 
         while(clienteLogado){
             
             OpcoesIti.listaOpcoes()
             let escolha = readLine()!
             switch escolha {
             case "1":
-                print("Digite a agência para transfênria")
-                let agencia: String = readLine()!
-                print("Digite o número da conta")
-                let conta: String =  readLine()!
-                if let clienteSortudo = Cliente.buscaConta(agencia: agencia, conta: conta){
-                    print("Informe o valor a ser depositado")
-                    let valor: String = readLine()!
+                
+                let (agencia, conta) = sistemaView.transferir()
+                
+                if let clienteSortudo = clienteController.buscaConta(agencia: agencia, conta: conta){
+                    let valor = sistemaView.depositar()
                     clienteSortudo.depositar(valor:valor)
                 }else{
-                    print("Conta não encontrada!")
+                    sistemaView.mensagemSistema(mensagem:"Conta não encontrada!")
                 }
                
             case "2":print("1")
             case "3":print("1")
             case "4":
-                print("Quanto você deseja depositar: R$")
-                let valor: String = readLine()!
+               
+                let valor = sistemaView.depositar()
                 cliente!.depositar(valor: valor)
             case "5":
                 print(cliente!.verSaldo())
             case "6":
        
-                let (podeExcluir, avaliacao) = cliente!.excluirConta()
+                let (podeExcluir, avaliacao) = clienteController.removerCliente(cliente: cliente)
                 if podeExcluir{
                     print(avaliacao)
                     clienteLogado = false
@@ -106,12 +107,10 @@ class Sistema{
                 }else{
                     print(avaliacao)
                 }
-               
                 
-               
             case "7": clienteLogado = false
             default:
-                print("OPÇÃO INVÁLIDA")
+                sistemaView.mensagemSistema(mensagem: "Opção inválida")
             }
             
         }

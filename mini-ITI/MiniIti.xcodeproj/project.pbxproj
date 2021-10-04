@@ -50,6 +50,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		20765925270B33D40053AF44 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		208DB38627061B8800CFF747 = {
 			isa = PBXGroup;
 			children = (
@@ -69,6 +76,7 @@
 		208DB39127061B8800CFF747 /* MiniITI */ = {
 			isa = PBXGroup;
 			children = (
+				20765925270B33D40053AF44 /* View */,
 				208DB39227061B8800CFF747 /* main.swift */,
 				208DB39D27062DE000CFF747 /* OpcoesIti.swift */,
 				208DB399270627FD00CFF747 /* Cliente.swift */,

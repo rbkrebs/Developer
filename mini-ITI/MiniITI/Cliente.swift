@@ -8,7 +8,25 @@
 import Foundation
 
 
-class Cliente{
+class Cliente: Comparable{
+    
+    
+    static func == (lhs: Cliente, rhs: Cliente) -> Bool {
+        
+        if(lhs.cpf != rhs.cpf){
+            return false
+        }
+        return true
+    }
+    
+    
+    static func < (lhs: Cliente, rhs: Cliente) -> Bool {
+        if(lhs.cpf != rhs.cpf){
+            return false
+        }
+        return true
+    }
+    
     
     
     let nome: String
@@ -19,8 +37,10 @@ class Cliente{
     let renda: String
     let senha: String
     let conta: Conta
-    private(set) var saldo: Double = 0
+    private(set) var saldo: Double = -1
     static var listaClientes: [Cliente] = []
+    
+    
     
 
     init(
@@ -41,6 +61,12 @@ class Cliente{
         self.senha = senha
         self.conta = Conta(cpf:cpf)
     }
+    
+    deinit {
+        print("Cliente excluído")
+    }
+    
+    
     
     func verSaldo() -> String{
         return
@@ -82,6 +108,7 @@ class Cliente{
         return cliente
     }
     
+    
     class func buscaCliente(conta: String,senha:String) -> Cliente?{
         
         return Cliente.listaClientes.filter{$0.senha == senha && $0.conta.conta == conta}.first ?? nil
@@ -99,6 +126,31 @@ class Cliente{
         
     }
     
+    func excluirConta() -> (Bool,String) {
+        
+        if(clienteEstaDevendo()){
+            return (true, "Cliente possui débitos com o banco! Regularize já sua situação para continuar com a operação de exclusão")
+        }
+        else{
+            var clienteRemovidoIndex = 0
+            for (index, cliente) in Cliente.listaClientes.enumerated(){
+                if(cliente == self){
+                    
+                    clienteRemovidoIndex = index
+                }
+            }
+            
+            Cliente.listaClientes.remove(at: clienteRemovidoIndex)
+            return (false, "")
+        }
+        
+    }
+    
+    func clienteEstaDevendo() -> Bool{
+        
+        return self.saldo < 0
+    }
+    
     
     
     
@@ -106,3 +158,5 @@ class Cliente{
     
     
 }
+
+

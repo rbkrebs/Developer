@@ -21,11 +21,11 @@ enum OpcoesIti: Int, CaseIterable{
         switch self{
         case .transferir: return "1 - Transferir agencia/conta"
         case .pagarPix: return "2 - Pagar / Transferir com PIX"
-        case .criarChave: return "3 -  Cadastrar chave PIX"
-        case .depositar: return "4 -  Depositar"
-        case .verSaldo: return "5 -  Saldo"
-        case .excluirConta: return "6 -  Excluir conta"
-        case .sair: return "7 -  Sair"
+        case .criarChave: return "3 - Cadastrar chave PIX"
+        case .depositar: return "4 - Depositar"
+        case .verSaldo: return "5 - Saldo"
+        case .excluirConta: return "6 - Excluir conta"
+        case .sair: return "7 - Sair"
         }
     }
     

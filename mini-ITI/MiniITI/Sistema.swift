@@ -23,7 +23,7 @@ class Sistema{
             case "1":
                 
                 if let clienteAutenticado = autenticaUsuario(){
-                    acessaSistema(cliente: clienteAutenticado)
+                    acessaSistema(clienteAuth: clienteAutenticado)
                 }else{
                     print("DADOS INVÁLIDOS")
                 }
@@ -32,7 +32,7 @@ class Sistema{
             case "2":
                 
                 let clienteNovo: Cliente = Cliente.menuCriaCliente()
-                acessaSistema(cliente: clienteNovo)
+                acessaSistema(clienteAuth: clienteNovo)
                 
             case "3":
                 print("tchau")
@@ -64,8 +64,8 @@ class Sistema{
     }
     
     
-    private func acessaSistema(cliente: Cliente){
-        
+    private func acessaSistema(clienteAuth: Cliente){
+        var cliente: Cliente? = clienteAuth
         var clienteLogado: Bool = true
         print("************ VOCÊ ESTÁ LOGADO! **************")
         print("Escolha uma das opções abaixo")
@@ -92,10 +92,23 @@ class Sistema{
             case "4":
                 print("Quanto você deseja depositar: R$")
                 let valor: String = readLine()!
-                cliente.depositar(valor: valor)
+                cliente!.depositar(valor: valor)
             case "5":
-                print(cliente.verSaldo())
-            case "6":print("1")
+                print(cliente!.verSaldo())
+            case "6":
+       
+                let (podeExcluir, avaliacao) = cliente!.excluirConta()
+                if podeExcluir{
+                    print(avaliacao)
+                    clienteLogado = false
+                    //desalocar cliente da memória
+                    cliente = nil
+                }else{
+                    print(avaliacao)
+                }
+               
+                
+               
             case "7": clienteLogado = false
             default:
                 print("OPÇÃO INVÁLIDA")

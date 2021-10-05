@@ -11,34 +11,20 @@ import Foundation
 class Cliente: Comparable{
     
     
-    static func == (lhs: Cliente, rhs: Cliente) -> Bool {
-        
-        if(lhs.cpf != rhs.cpf){
-            return false
-        }
-        return true
-    }
     
     
-    static func < (lhs: Cliente, rhs: Cliente) -> Bool {
-        if(lhs.cpf != rhs.cpf){
-            return false
-        }
-        return true
-    }
-    
-    
-    
-    let nome: String
-    let cpf: String
-    let telefone: String
-    let endereco: String
-    let ocupacao: String
-    let renda: String
-    let senha: String
-    let conta: Conta
-    private(set) var saldo: Double = -1
+    private let nome: String
+    private let cpf: String
+    private let telefone: String
+    private let endereco: String
+    private let ocupacao: String
+    private let renda: String
+    private let senha: String
+    private let conta: Conta
+    private(set) var saldo: Double = 0
     static var listaClientes: [Cliente] = []
+    private var tipoChavePix: TipoChavePix?
+    private var chavePix: String?
     
     
     
@@ -80,34 +66,6 @@ class Cliente: Comparable{
         """
     }
     
-    class func menuCriaCliente() -> Cliente{
-        
-        print("********** NOVO USUÁRIO ************")
-        print("Digite seu nome")
-        let nome:String = readLine()!
-        print("Digite seu cpf")
-        let cpf:String = readLine()!
-        print("Digite seu telefone")
-        let telefone:String = readLine()!
-        print("Digite seu endereço")
-        let endereco:String = readLine()!
-        print("Digite sua ocupação")
-        let ocupacao: String = readLine()!
-        print("Digite sua renda")
-        let renda:String = readLine()!
-        print("Digite sua senha")
-        let senha:String = readLine()!
-        let cliente = Cliente(nome: nome,
-                              cpf: cpf,
-                              telefone: telefone,
-                              endereco: endereco,
-                              ocupacao: ocupacao,
-                              renda: renda,
-                              senha: senha)
-        Cliente.listaClientes.append(cliente)
-        return cliente
-    }
-    
     
     func depositar(valor: String){
         
@@ -129,6 +87,32 @@ class Cliente: Comparable{
     
     
     
+    static func == (lhs: Cliente, rhs: Cliente) -> Bool {
+        
+        if(lhs.cpf != rhs.cpf){
+            return false
+        }
+        return true
+    }
+    
+    
+    static func < (lhs: Cliente, rhs: Cliente) -> Bool {
+        if(lhs.cpf != rhs.cpf){
+            return false
+        }
+        return true
+    }
+    
+    func getSenha() -> String{
+        return self.senha
+    }
+    
+    func getConta() -> Conta{
+        return self.conta
+    }
+    
+    
+ 
     
     
     

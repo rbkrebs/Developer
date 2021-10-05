@@ -8,10 +8,10 @@
 import Foundation
 
 
-let sistema: Sistema = Sistema()
+let sistema: SistemaController = SistemaController()
 
 
-while(!Sistema.sairDoSistema){
+while(!SistemaController.sairDoSistema){
 
   sistema.inicializaSistema()
 }

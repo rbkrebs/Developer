@@ -10,7 +10,13 @@ import Foundation
 
 struct ClienteView{
     
-    func menuCriaCliente(){
+    func menuCriaCliente() -> (nome: String,
+                               cpf: String,
+                               telefone: String,
+                               endereco: String,
+                               ocupacao: String,
+                               renda: String,
+                               senha: String){
     print("********** NOVO USUÁRIO ************")
     print("Digite seu nome")
     let nome:String = readLine()!
@@ -26,13 +32,9 @@ struct ClienteView{
     let renda:String = readLine()!
     print("Digite sua senha")
     let senha:String = readLine()!
-    let cliente = Cliente(nome: nome,
-                          cpf: cpf,
-                          telefone: telefone,
-                          endereco: endereco,
-                          ocupacao: ocupacao,
-                          renda: renda,
-                          senha: senha)
+        
+        return (nome, cpf, telefone, endereco, ocupacao, renda, senha)
+   
    
     }
     

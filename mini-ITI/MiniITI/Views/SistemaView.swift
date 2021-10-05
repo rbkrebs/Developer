@@ -33,7 +33,7 @@ struct SistemaView{
         
     }
     
-    func transferir() -> (String,String){
+    func transferir() -> (agencia:String,conta:String){
         
         print("Digite a agência para transfênria")
         let agencia: String = readLine()!

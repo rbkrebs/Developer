@@ -8,11 +8,13 @@
 import Foundation
 
 
-class Sistema{
+class SistemaController{
     
     static var sairDoSistema: Bool = false
     let clienteController = ClienteController()
     let sistemaView = SistemaView()
+    let clienteView = ClienteView()
+    static var listaClientes: [Cliente] = []
    
     
     
@@ -31,17 +33,25 @@ class Sistema{
                 }
                 
             case "2":
+                let viewNovoCliente = clienteView.menuCriaCliente()
                 
-                let clienteNovo: Cliente = Cliente.menuCriaCliente()
+                let clienteNovo: Cliente = Cliente(nome: viewNovoCliente.nome,
+                                      cpf: viewNovoCliente.cpf,
+                                      telefone: viewNovoCliente.telefone,
+                                      endereco: viewNovoCliente.endereco,
+                                      ocupacao: viewNovoCliente.ocupacao,
+                                      renda: viewNovoCliente.renda,
+                                      senha: viewNovoCliente.senha)
+                SistemaController.listaClientes.append(clienteNovo)
                 acessaSistema(clienteAuth: clienteNovo)
                 
             case "3":
                 sistemaView.mensagemSistema(mensagem: "Tchauzin!")
-                Sistema.sairDoSistema = true
+                SistemaController.sairDoSistema = true
                 
             default:
                 sistemaView.mensagemSistema(mensagem: "Opção inválida")
-                Sistema.sairDoSistema = true
+                SistemaController.sairDoSistema = true
             }
             
         }
@@ -79,9 +89,9 @@ class Sistema{
             switch escolha {
             case "1":
                 
-                let (agencia, conta) = sistemaView.transferir()
+                let contaTransferencia = sistemaView.transferir()
                 
-                if let clienteSortudo = clienteController.buscaConta(agencia: agencia, conta: conta){
+                if let clienteSortudo = clienteController.buscaConta(conta: Conta(conta: contaTransferencia.conta, agencia: contaTransferencia.agencia)){
                     let valor = sistemaView.depositar()
                     clienteSortudo.depositar(valor:valor)
                 }else{

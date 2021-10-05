@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum tipoChave: Int{
+enum TipoChavePix: Int{
     
     case email = 1
     case telefone = 2

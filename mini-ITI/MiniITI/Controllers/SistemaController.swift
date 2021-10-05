@@ -15,6 +15,7 @@ class SistemaController{
     let sistemaView = SistemaView()
     let clienteView = ClienteView()
     static var listaClientes: [Cliente] = []
+    let clienteService = ClienteService()
    
     
     
@@ -34,6 +35,8 @@ class SistemaController{
                 
             case "2":
                 let viewNovoCliente = clienteView.menuCriaCliente()
+                //clienteService.validaCpf(cpf: viewNovoCliente.cpf)
+                
                 
                 let clienteNovo: Cliente = Cliente(nome: viewNovoCliente.nome,
                                       cpf: viewNovoCliente.cpf,
@@ -98,24 +101,39 @@ class SistemaController{
                     sistemaView.mensagemSistema(mensagem:"Conta não encontrada!")
                 }
                
-            case "2":print("1")
-            case "3":print("1")
+            case "2":
+                if cliente?.getChavePix() == nil{
+                    sistemaView.mensagemSistema(mensagem: "Cadastre sua chave PIX")
+                }else{
+                    let clienteSortudo = sistemaView.pagarPix()
+                    if  clienteController.pagaClientePix(chavePix: clienteSortudo.chavePix, valor: clienteSortudo.valor){
+                        sistemaView.mensagemSistema(mensagem: "PIX realizado com sucesso")
+                    }else{
+                        sistemaView.mensagemSistema(mensagem: "Erro ao tentar realizar o PIX. Verifique se os valores informados estão corretos")
+                    }
+                }
+                 
+            
+            case "3":
+                let pix = sistemaView.cadastrarPix()
+                cliente?.setChavePix(chavePix: pix.chavePix)
+                cliente?.setTipoChavePix(tipoChavePix: pix.tipoPix)
             case "4":
                
                 let valor = sistemaView.depositar()
                 cliente!.depositar(valor: valor)
             case "5":
-                print(cliente!.verSaldo())
+                sistemaView.mensagemSistema(mensagem:cliente!.verSaldo())
             case "6":
        
                 let (podeExcluir, avaliacao) = clienteController.removerCliente(cliente: cliente)
                 if podeExcluir{
-                    print(avaliacao)
+                    sistemaView.mensagemSistema(mensagem:avaliacao)
                     clienteLogado = false
                     //desalocar cliente da memória
                     cliente = nil
                 }else{
-                    print(avaliacao)
+                    sistemaView.mensagemSistema(mensagem:avaliacao)
                 }
                 
             case "7": clienteLogado = false

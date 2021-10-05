@@ -60,6 +60,7 @@ class Cliente: Comparable{
             Nome: \(self.nome)
             Agência: \(self.conta.agencia)
             Conta: \(self.conta.conta)
+            ChavePIX: \(self.chavePix)
                             
                         
                             \(saldo)
@@ -83,6 +84,17 @@ class Cliente: Comparable{
     func clienteEstaDevendo() -> Bool{
         
         return self.saldo < 0
+    }
+    
+    func getChavePix() -> String?{
+        return self.chavePix
+    }
+    func setChavePix(chavePix: String){
+        self.chavePix = chavePix
+    }
+    
+    func setTipoChavePix(tipoChavePix: String){
+        self.tipoChavePix = TipoChavePix(rawValue: Int(tipoChavePix) ?? 0)
     }
     
     

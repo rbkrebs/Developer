@@ -54,6 +54,36 @@ struct SistemaView{
         
     }
     
+    func pagarPix() -> (tipoPix:String,
+                        chavePix: String,
+                        valor: String){
+        
+        print("Digite o tipo da chave")
+        TipoChavePix.listaOpcoes()
+        let tipoPix = readLine()!
+        print("Digite a chave pix")
+        let chavePix = readLine()!
+        print("Digite o valor do pix")
+        let valor =  readLine()!
+        
+        return (tipoPix, chavePix, valor)
+        
+    }
+    
+    func cadastrarPix() -> (tipoPix:String,
+                            chavePix: String){
+        
+        print("Digite o tipo da chave")
+        TipoChavePix.listaOpcoes()
+        let tipoPix = readLine()!
+        print("Digite a chave pix")
+        let chavePix = readLine()!
+       
+        return (tipoPix, chavePix)
+        
+        
+    }
+    
     
     
     

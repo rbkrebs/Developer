@@ -38,4 +38,13 @@ struct ClienteView{
    
     }
     
+    func opcoesMenuCLiente() -> String{
+        
+        OpcoesIti.listaOpcoes()
+        let escolha = readLine()!
+        return escolha
+    }
+    
+    
+    
 }

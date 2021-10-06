@@ -34,19 +34,25 @@ class SistemaController{
                 }
                 
             case "2":
-                let viewNovoCliente = clienteView.menuCriaCliente()
-                //clienteService.validaCpf(cpf: viewNovoCliente.cpf)
+                let viewDadosNovoCliente = clienteView.menuCriaCliente()
+                let novoClienteDTO = ClienteDTO(nome: viewDadosNovoCliente.nome,
+                                                cpf: viewDadosNovoCliente.cpf,
+                                                telefone: viewDadosNovoCliente.telefone,
+                                                endereco: viewDadosNovoCliente.endereco,
+                                                ocupacao: viewDadosNovoCliente.ocupacao,
+                                                renda: viewDadosNovoCliente.renda,
+                                                senha: viewDadosNovoCliente.renda)
+                
+                if let clienteNovo: Cliente = clienteService.toModel(cliente: novoClienteDTO){
+                    SistemaController.listaClientes.append(clienteNovo)
+                    acessaSistema(clienteAuth: clienteNovo)
+                }else{
+                    sistemaView.mensagemSistema(mensagem: "Falha ao cadastrar novo cliente")
+                }
                 
                 
-                let clienteNovo: Cliente = Cliente(nome: viewNovoCliente.nome,
-                                      cpf: viewNovoCliente.cpf,
-                                      telefone: viewNovoCliente.telefone,
-                                      endereco: viewNovoCliente.endereco,
-                                      ocupacao: viewNovoCliente.ocupacao,
-                                      renda: viewNovoCliente.renda,
-                                      senha: viewNovoCliente.senha)
-                SistemaController.listaClientes.append(clienteNovo)
-                acessaSistema(clienteAuth: clienteNovo)
+              
+                
                 
             case "3":
                 sistemaView.mensagemSistema(mensagem: "Tchauzin!")
@@ -87,16 +93,16 @@ class SistemaController{
  
         while(clienteLogado){
             
-            OpcoesIti.listaOpcoes()
-            let escolha = readLine()!
+            
+            let escolha = clienteView.opcoesMenuCLiente()
             switch escolha {
             case "1":
                 
                 let contaTransferencia = sistemaView.transferir()
                 
-                if let clienteSortudo = clienteController.buscaConta(conta: Conta(conta: contaTransferencia.conta, agencia: contaTransferencia.agencia)){
+                if let clienteBeneficario = clienteController.buscaConta(conta: Conta(conta: contaTransferencia.conta, agencia: contaTransferencia.agencia)){
                     let valor = sistemaView.depositar()
-                    clienteSortudo.depositar(valor:valor)
+                    clienteBeneficario.depositar(valor:valor)
                 }else{
                     sistemaView.mensagemSistema(mensagem:"Conta não encontrada!")
                 }
@@ -105,8 +111,8 @@ class SistemaController{
                 if cliente?.getChavePix() == nil{
                     sistemaView.mensagemSistema(mensagem: "Cadastre sua chave PIX")
                 }else{
-                    let clienteSortudo = sistemaView.pagarPix()
-                    if  clienteController.pagaClientePix(chavePix: clienteSortudo.chavePix, valor: clienteSortudo.valor){
+                    let clienteBeneficario = sistemaView.pagarPix()
+                    if  clienteController.pagaClientePix(chavePix: clienteBeneficario.chavePix, valor: clienteBeneficario.valor){
                         sistemaView.mensagemSistema(mensagem: "PIX realizado com sucesso")
                     }else{
                         sistemaView.mensagemSistema(mensagem: "Erro ao tentar realizar o PIX. Verifique se os valores informados estão corretos")

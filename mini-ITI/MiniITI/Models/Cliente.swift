@@ -15,11 +15,11 @@ class Cliente: Comparable{
     
     private let nome: String
     private let cpf: String
-    private let telefone: String
-    private let endereco: String
-    private let ocupacao: String
-    private let renda: String
-    private let senha: String
+    private var telefone: String
+    private var endereco: String
+    private var ocupacao: String
+    private var renda: String
+    private var senha: String
     private let conta: Conta
     private(set) var saldo: Double = 0
     static var listaClientes: [Cliente] = []
@@ -47,6 +47,7 @@ class Cliente: Comparable{
         self.senha = senha
         self.conta = Conta(cpf:cpf)
     }
+
     
     deinit {
         print("Cliente excluído")
@@ -60,7 +61,7 @@ class Cliente: Comparable{
             Nome: \(self.nome)
             Agência: \(self.conta.agencia)
             Conta: \(self.conta.conta)
-            ChavePIX: \(self.chavePix)
+            ChavePIX: \(self.chavePix ?? "ChavePIX não cadastrada")
                             
                         
                             \(saldo)
@@ -107,9 +108,9 @@ class Cliente: Comparable{
         return true
     }
     
-    
+    //Nada definido ainda pra essa função. Implementada por conta do contrato
     static func < (lhs: Cliente, rhs: Cliente) -> Bool {
-        if(lhs.cpf != rhs.cpf){
+        if(lhs.nome != rhs.nome){
             return false
         }
         return true

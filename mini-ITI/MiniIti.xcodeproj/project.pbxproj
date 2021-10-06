@@ -12,6 +12,8 @@
 		2076592D270B75CA0053AF44 /* SistemaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2076592C270B75CA0053AF44 /* SistemaView.swift */; };
 		20765932270C7E3B0053AF44 /* ClienteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20765931270C7E3B0053AF44 /* ClienteService.swift */; };
 		20765936270C9B130053AF44 /* ValidationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20765935270C9B130053AF44 /* ValidationError.swift */; };
+		2076593B270DCC480053AF44 /* ClienteDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2076593A270DCC480053AF44 /* ClienteDTO.swift */; };
+		2076593D270E256C0053AF44 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2076593C270E256C0053AF44 /* Extensions.swift */; };
 		208DB39327061B8800CFF747 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208DB39227061B8800CFF747 /* main.swift */; };
 		208DB39A270627FD00CFF747 /* Cliente.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208DB399270627FD00CFF747 /* Cliente.swift */; };
 		208DB39C27062DBD00CFF747 /* OpcoesEntrada.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208DB39B27062DBD00CFF747 /* OpcoesEntrada.swift */; };
@@ -39,6 +41,8 @@
 		2076592C270B75CA0053AF44 /* SistemaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SistemaView.swift; sourceTree = "<group>"; };
 		20765931270C7E3B0053AF44 /* ClienteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClienteService.swift; sourceTree = "<group>"; };
 		20765935270C9B130053AF44 /* ValidationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationError.swift; sourceTree = "<group>"; };
+		2076593A270DCC480053AF44 /* ClienteDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClienteDTO.swift; sourceTree = "<group>"; };
+		2076593C270E256C0053AF44 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		208DB38F27061B8800CFF747 /* MiniIti */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = MiniIti; sourceTree = BUILT_PRODUCTS_DIR; };
 		208DB39227061B8800CFF747 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		208DB399270627FD00CFF747 /* Cliente.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cliente.swift; sourceTree = "<group>"; };
@@ -72,7 +76,6 @@
 		20765926270B71310053AF44 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				20765930270C7E1D0053AF44 /* Services */,
 				208DB3D727072C2000CFF747 /* SistemaController.swift */,
 				20765927270B71550053AF44 /* ClienteController.swift */,
 			);
@@ -82,10 +85,7 @@
 		20765929270B74D80053AF44 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				208DB39D27062DE000CFF747 /* OpcoesIti.swift */,
 				208DB399270627FD00CFF747 /* Cliente.swift */,
-				208DB39B27062DBD00CFF747 /* OpcoesEntrada.swift */,
-				208DB39F2706309B00CFF747 /* TipoChavePix.swift */,
 				208DB3B1270675C100CFF747 /* Conta.swift */,
 			);
 			path = Models;
@@ -103,8 +103,27 @@
 			isa = PBXGroup;
 			children = (
 				20765935270C9B130053AF44 /* ValidationError.swift */,
+				2076593C270E256C0053AF44 /* Extensions.swift */,
 			);
 			path = Validation;
+			sourceTree = "<group>";
+		};
+		20765938270DC9360053AF44 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				208DB39D27062DE000CFF747 /* OpcoesIti.swift */,
+				208DB39B27062DBD00CFF747 /* OpcoesEntrada.swift */,
+				208DB39F2706309B00CFF747 /* TipoChavePix.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
+		20765939270DCC2E0053AF44 /* DTO */ = {
+			isa = PBXGroup;
+			children = (
+				2076593A270DCC480053AF44 /* ClienteDTO.swift */,
+			);
+			path = DTO;
 			sourceTree = "<group>";
 		};
 		208DB38627061B8800CFF747 = {
@@ -126,6 +145,9 @@
 		208DB39127061B8800CFF747 /* MiniITI */ = {
 			isa = PBXGroup;
 			children = (
+				20765930270C7E1D0053AF44 /* Services */,
+				20765939270DCC2E0053AF44 /* DTO */,
+				20765938270DC9360053AF44 /* Enums */,
 				20765937270CDB6B0053AF44 /* Validation */,
 				20765929270B74D80053AF44 /* Models */,
 				20765926270B71310053AF44 /* Controllers */,
@@ -203,7 +225,9 @@
 				2076592D270B75CA0053AF44 /* SistemaView.swift in Sources */,
 				208DB39327061B8800CFF747 /* main.swift in Sources */,
 				20765932270C7E3B0053AF44 /* ClienteService.swift in Sources */,
+				2076593B270DCC480053AF44 /* ClienteDTO.swift in Sources */,
 				208DB3A02706309B00CFF747 /* TipoChavePix.swift in Sources */,
+				2076593D270E256C0053AF44 /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

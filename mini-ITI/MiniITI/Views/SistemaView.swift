@@ -40,7 +40,6 @@ struct SistemaView{
         print("Digite o número da conta")
         let conta: String =  readLine()!
         
-        
         return (agencia, conta)
         
         

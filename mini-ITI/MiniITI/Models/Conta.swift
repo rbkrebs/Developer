@@ -37,10 +37,4 @@ struct Conta: Comparable{
    
 }
 
-extension ClosedRange where Bound == Int{
-    
-    var agenciaRandomica : String {
-        return String(Int.random(in: self))
-    }
-    
-}
+

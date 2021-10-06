@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum TipoChavePix: Int{
+enum TipoChavePix: Int, CaseIterable{
     
     case email = 1
     case cpf = 2
@@ -21,6 +21,6 @@ enum TipoChavePix: Int{
     }
     
     static func listaOpcoes(){
-        OpcoesEntrada.allCases.forEach{print($0.description)}
+        TipoChavePix.allCases.forEach{print($0.description)}
     }
 }

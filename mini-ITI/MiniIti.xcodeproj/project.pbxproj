@@ -87,7 +87,6 @@
 				208DB39B27062DBD00CFF747 /* OpcoesEntrada.swift */,
 				208DB39F2706309B00CFF747 /* TipoChavePix.swift */,
 				208DB3B1270675C100CFF747 /* Conta.swift */,
-				20765935270C9B130053AF44 /* ValidationError.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -98,6 +97,14 @@
 				20765931270C7E3B0053AF44 /* ClienteService.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		20765937270CDB6B0053AF44 /* Validation */ = {
+			isa = PBXGroup;
+			children = (
+				20765935270C9B130053AF44 /* ValidationError.swift */,
+			);
+			path = Validation;
 			sourceTree = "<group>";
 		};
 		208DB38627061B8800CFF747 = {
@@ -119,6 +126,7 @@
 		208DB39127061B8800CFF747 /* MiniITI */ = {
 			isa = PBXGroup;
 			children = (
+				20765937270CDB6B0053AF44 /* Validation */,
 				20765929270B74D80053AF44 /* Models */,
 				20765926270B71310053AF44 /* Controllers */,
 				20765925270B33D40053AF44 /* Views */,

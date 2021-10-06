@@ -11,6 +11,7 @@ import Foundation
 enum ValidationError : Error{
     
     case cpfInvalido
+    case estaEmBranco
     
 }
 
@@ -21,6 +22,8 @@ extension ValidationError: LocalizedError{
         switch self {
         case .cpfInvalido:
             return NSLocalizedString("CPF inválido. Deve conter 11 digitos numéricos", comment: "")
+        case .estaEmBranco:
+            return NSLocalizedString("Texto em branco. Este campos é obrigatório", comment: "")
         }
         
         

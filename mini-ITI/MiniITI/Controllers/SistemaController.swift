@@ -103,6 +103,7 @@ class SistemaController{
                 if let clienteBeneficario = clienteController.buscaConta(conta: Conta(conta: contaTransferencia.conta, agencia: contaTransferencia.agencia)){
                     let valor = sistemaView.depositar()
                     clienteBeneficario.depositar(valor:valor)
+                    cliente?.debitar(valor: valor)
                 }else{
                     sistemaView.mensagemSistema(mensagem:"Conta não encontrada!")
                 }

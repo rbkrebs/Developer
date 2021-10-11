@@ -12,6 +12,8 @@ import Security
 
 struct ClienteService{
     
+    var bancoDeDados: Database =  Database.shared
+    
     func validaCpf(cpf: String) throws -> (ehValid: Bool, convertido: Double?){
         
         if cpf.count != 11 {
@@ -28,15 +30,10 @@ struct ClienteService{
         
     }
     
-    func salvarCliente(cliente: Cliente) throws{
+    func salvarCliente(cliente: Cliente){
         //TODO
-        /*do {
-            try
-                <#throwing expression#>
-        } catch  {
-            
-           
-        }*/
+        
+        bancoDeDados.salvar(salvar: cliente)
         
     }
     //função aceitando somente caminho feliz

@@ -21,7 +21,7 @@ class Cliente: Comparable{
     private var renda: String
     private var senha: String
     private let conta: Conta
-    private(set) var saldo: Double = 0
+    private var saldo: Double = 0
     static var listaClientes: [Cliente] = []
     private var tipoChavePix: TipoChavePix?
     private var chavePix: String?
@@ -66,6 +66,10 @@ class Cliente: Comparable{
                         
                             \(saldo)
         """
+    }
+    
+    func debitar(valor: String){
+        self.saldo -= Double(saldo)
     }
     
     

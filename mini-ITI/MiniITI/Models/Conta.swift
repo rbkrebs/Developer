@@ -11,7 +11,7 @@ struct Conta: Comparable{
     
     
     static func == (lhs: Conta, rhs: Conta) -> Bool {
-        if((lhs.agencia == rhs.agencia) && (lhs.conta == rhs.agencia)){
+        if((lhs.agencia == rhs.agencia) && (lhs.conta == rhs.conta)){
             return true
         }
         return false

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2028250B2714B48D00891DCD /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2028250A2714B48D00891DCD /* Database.swift */; };
 		20765928270B71550053AF44 /* ClienteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20765927270B71550053AF44 /* ClienteController.swift */; };
 		2076592B270B75210053AF44 /* ClienteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2076592A270B75210053AF44 /* ClienteView.swift */; };
 		2076592D270B75CA0053AF44 /* SistemaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2076592C270B75CA0053AF44 /* SistemaView.swift */; };
@@ -36,6 +37,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2028250A2714B48D00891DCD /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
 		20765927270B71550053AF44 /* ClienteController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ClienteController.swift; path = ../../../../ClienteController.swift; sourceTree = "<group>"; };
 		2076592A270B75210053AF44 /* ClienteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClienteView.swift; sourceTree = "<group>"; };
 		2076592C270B75CA0053AF44 /* SistemaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SistemaView.swift; sourceTree = "<group>"; };
@@ -64,6 +66,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		202825092714B45800891DCD /* BD */ = {
+			isa = PBXGroup;
+			children = (
+				2028250A2714B48D00891DCD /* Database.swift */,
+			);
+			path = BD;
+			sourceTree = "<group>";
+		};
 		20765925270B33D40053AF44 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -145,6 +155,7 @@
 		208DB39127061B8800CFF747 /* MiniITI */ = {
 			isa = PBXGroup;
 			children = (
+				202825092714B45800891DCD /* BD */,
 				20765930270C7E1D0053AF44 /* Services */,
 				20765939270DCC2E0053AF44 /* DTO */,
 				20765938270DC9360053AF44 /* Enums */,
@@ -217,6 +228,7 @@
 				208DB39C27062DBD00CFF747 /* OpcoesEntrada.swift in Sources */,
 				208DB39E27062DE000CFF747 /* OpcoesIti.swift in Sources */,
 				2076592B270B75210053AF44 /* ClienteView.swift in Sources */,
+				2028250B2714B48D00891DCD /* Database.swift in Sources */,
 				20765928270B71550053AF44 /* ClienteController.swift in Sources */,
 				208DB3D827072C2000CFF747 /* SistemaController.swift in Sources */,
 				20765936270C9B130053AF44 /* ValidationError.swift in Sources */,

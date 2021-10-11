@@ -38,5 +38,29 @@ struct ClienteDTO{
         
     }
     
+    //função aceitando somente caminho feliz
+    func toModel(cliente: ClienteDTO) -> Cliente?{
+        
+        let clienteModel: Cliente = Cliente(nome: cliente.nome,
+                                            cpf: cliente.cpf,
+                                            telefone: cliente.telefone,
+                                            endereco: cliente.endereco,
+                                            ocupacao: cliente.ocupacao,
+                                            renda: cliente.renda,
+                                            senha: cliente.senha)
+        
+        return clienteModel
+        
+    }
+    
+    // TODO
+    
+    func validaCliente(cliente: ClienteDTO) throws -> Bool{
+        
+       
+        
+        return true
+    }
+    
  
 }

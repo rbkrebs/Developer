@@ -22,7 +22,6 @@ class Cliente: Comparable{
     private var senha: String
     private let conta: Conta
     private var saldo: Double = 0
-    static var listaClientes: [Cliente] = []
     private var tipoChavePix: TipoChavePix?
     private var chavePix: String?
     
@@ -69,21 +68,15 @@ class Cliente: Comparable{
     }
     
     func debitar(valor: String){
-        self.saldo -= Double(saldo)
+        
+        self.saldo -= Double(valor) ?? 0
     }
     
     
     func depositar(valor: String){
         
-        self.saldo += Double(valor)!
+        self.saldo += Double(valor) ?? 0
         
-    }
-    
-    func excluirConta(clienteRemovidoIndex: Int) {
-        
-            
-        Cliente.listaClientes.remove(at: clienteRemovidoIndex)
-         
     }
     
     func clienteEstaDevendo() -> Bool{
@@ -126,6 +119,10 @@ class Cliente: Comparable{
     
     func getConta() -> Conta{
         return self.conta
+    }
+    
+    func getCpf() -> String{
+        return self.cpf
     }
     
     

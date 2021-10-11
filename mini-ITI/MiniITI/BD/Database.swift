@@ -15,15 +15,23 @@ class Database{
             return instance
         }()
     
-    private static var listaBanco:[Cliente] = []
+    private var listaBanco:[Cliente] = []
     
     
     init(){}
     
     
     func salvar(salvar cliente: Cliente){
-        Database.listaBanco.append(cliente)
+        self.listaBanco.append(cliente)
         
+    }
+    
+    func getListabanco() -> [Cliente]{
+        return self.listaBanco
+    }
+    
+    func excluir(_ index: Int){
+        self.listaBanco.remove(at: index)
     }
     
     

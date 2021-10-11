@@ -13,8 +13,7 @@ class SistemaController{
     static var sairDoSistema: Bool = false
     let clienteController = ClienteController()
     let sistemaView = SistemaView()
-    let clienteView = ClienteView()
-    static var listaClientes: [Cliente] = []
+    let clienteView = ClienteView()    
     let clienteService = ClienteService()
    
     
@@ -43,15 +42,12 @@ class SistemaController{
                                                 renda: viewDadosNovoCliente.renda,
                                                 senha: viewDadosNovoCliente.renda)
                 
-                if let clienteNovo: Cliente = clienteService.toModel(cliente: novoClienteDTO){
-                    SistemaController.listaClientes.append(clienteNovo)
+                if let clienteNovo: Cliente = clienteService.toModel(cliente: novoClienteDTO), clienteController.validaNovoCliente(cliente: clienteNovo){
+                    clienteController.salvarCliente(clienteNovo)
                     acessaSistema(clienteAuth: clienteNovo)
                 }else{
                     sistemaView.mensagemSistema(mensagem: "Falha ao cadastrar novo cliente")
                 }
-                
-                
-              
                 
                 
             case "3":
@@ -86,8 +82,8 @@ class SistemaController{
         var clienteLogado: Bool = true
         sistemaView.mensagemSistema(mensagem:
         """
-                ************ VOCÊ ESTÁ LOGADO! **************"
-                        "Escolha uma das opções abaixo"
+                ************ VOCÊ ESTÁ LOGADO! **************
+                        Escolha uma das opções abaixo
 
         """)
  
@@ -133,7 +129,7 @@ class SistemaController{
                 sistemaView.mensagemSistema(mensagem:cliente!.verSaldo())
             case "6":
        
-                let (podeExcluir, avaliacao) = clienteController.removerCliente(cliente: cliente)
+                let (podeExcluir, avaliacao) = clienteController.removerCliente(cliente: cliente!)
                 if podeExcluir{
                     sistemaView.mensagemSistema(mensagem:avaliacao)
                     clienteLogado = false

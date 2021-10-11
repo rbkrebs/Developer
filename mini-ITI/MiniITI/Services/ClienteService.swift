@@ -10,7 +10,7 @@ import Security
 
 
 
-struct ClienteService{
+class ClienteService{
     
     var bancoDeDados: Database =  Database.shared
     
@@ -31,9 +31,29 @@ struct ClienteService{
     }
     
     func salvarCliente(cliente: Cliente){
-        //TODO
         
         bancoDeDados.salvar(salvar: cliente)
+        
+    }
+    
+    func getListaClientes() -> [Cliente]?{
+        
+        return bancoDeDados.getListabanco()
+        
+    }
+    
+    func removeCliente(remove cliente: Cliente){
+        
+        for (index, iCliente) in bancoDeDados.getListabanco().enumerated(){
+         
+            if(iCliente == cliente){
+                
+                bancoDeDados.excluir(index)
+                
+            }
+            
+            
+        }
         
     }
     //função aceitando somente caminho feliz
@@ -53,7 +73,7 @@ struct ClienteService{
         
     }
     
-    
+     
     
     
     

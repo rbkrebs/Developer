@@ -7,10 +7,10 @@
 
 import Foundation
 
-struct ClienteDTO{
+struct ClienteDTO: ValidaCPF{
     
     private(set) var nome: String
-    private(set) var cpf: String
+    internal var cpf: String
     private(set) var telefone: String
     private(set) var endereco: String
     private(set) var ocupacao: String
@@ -63,4 +63,23 @@ struct ClienteDTO{
     }
     
  
+}
+
+
+protocol ValidaCPF{
+    var cpf: String {
+        get set
+    }
+    func validaCpf() -> Bool
+    
+}
+
+extension ValidaCPF{
+    
+    func validaCpf() -> Bool{
+        
+        return cpf.count == 11
+        
+    }
+    
 }

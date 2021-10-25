@@ -10,15 +10,13 @@ import Foundation
 
 class Database{
     
-    static var shared: Database = {
-            let instance = Database()
-            return instance
-        }()
+    
+    static var shared = Database()
     
     private var listaBanco:[Cliente] = []
     
     
-    init(){}
+    private init(){}
     
     
     func salvar(salvar cliente: Cliente){

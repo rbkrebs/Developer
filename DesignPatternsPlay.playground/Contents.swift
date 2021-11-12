@@ -142,6 +142,8 @@ Declaring delegates as weak makes sense because it prevents circular references 
  https://sandofsky.com/patterns/delegates-vs-observers/
  
  https://www.youtube.com/watch?v=Kr3G9C22_-Q
+ 
+ https://www.youtube.com/watch?v=srqiDnLEocA
 
  */
 
@@ -206,4 +208,107 @@ observable.triggerObserve()
 print(listenner1.getObserve())
 print(listenner2.getObserve())
 
-// ======================== MVVM Design Pattern =========================
+// ======================== MVVM =========================
+
+
+/* https://www.youtube.com/watch?v=n06RE9A_8Ks
+ https://www.youtube.com/watch?v=nWSHWWV8Nas
+ https://www.youtube.com/watch?v=qzXJckVxE4w&list=RDCMUCnksRRifsSCGUZpQukUKAyg&start_radio=1
+ https://www.youtube.com/watch?v=qzXJckVxE4w&t=981s
+ 
+ */
+
+
+// ======================== Builder Design Pattern =========================
+
+
+/* https://www.donnywals.com/understanding-swifts-optionset/
+ https://www.youtube.com/watch?v=Wgz1zFXXywc
+ 
+ */
+
+struct MalaViagem {
+    
+    private let roupasFrios: [String] = []
+    private let roupasCalor: [String] = []
+    
+}
+
+class MalaViagemBuilder {
+    
+    
+    
+    func addRoupaFrio(_ roupa : String){
+        
+        
+        
+    }
+    
+}
+
+
+
+// ======================== View coding =========================
+
+/* https://www.youtube.com/watch?v=bXF6KMJFwSE */
+
+
+
+
+
+// ======================== Data Structures =========================
+// The Swift Arcade Data Structure and Algorithms Bootcamp
+
+func solution (A: [Int], K: Int) -> [Int]{
+    
+    if A.isEmpty || K < 0 {
+        return A
+    }
+    var result = A
+    
+    for _ in 1...K{ //O(nˆ2)
+    
+        result = reverse(array: result);
+        
+    }
+    
+    return result
+    
+}
+
+
+func reverse(array:[Int]) -> [Int]{
+    
+    var result = Array<Int>(repeating: 0, count: array.count)
+    
+    for i in 0..<array.count - 1{
+        result[i + 1] = array[i]
+    }
+    
+    result[0] = array.last!
+    
+    return result
+}
+
+print(solution(A: [1, 2, 3, 4, 5], K: 1)) // [5,1,2,3,4]
+print(solution(A: [1, 2, 3, 4, 5], K: 2) )// [4,5,1,2,3]
+print(solution(A: [1, 2, 3, 4, 5], K: 3) )// [3,4,5,1,2]
+print(solution(A: [1,2], K: 2) )// [3,4,5,1,2]
+
+
+
+//==================
+
+func solution(_ S : String) -> String {
+    
+    
+    return ""
+}
+
+print(solution("123456789")) // 123-456-789
+print(solution("555372654")) // 555-372-654
+print(solution("123456789")) // 123-456-789
+
+
+
+

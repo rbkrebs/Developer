@@ -301,13 +301,45 @@ print(solution(A: [1,2], K: 2) )// [3,4,5,1,2]
 
 func solution(_ S : String) -> String {
     
+    var result = removeSpaces(array: S)
     
-    return ""
+    print(result.count)
+    
+    if ( result.count % 2 == 0 ) {
+        for i in stride(from: 2, through: result.count, by: 3){
+           
+            result.insert("-", at: i)
+        }
+    }
+    else{
+        for i in stride(from: 3, through: result.count, by: 4){
+          
+            result.insert("-", at: i)
+        }
+    }
+    
+    return String(result)
+}
+
+func removeSpaces( array : String ) -> [Character] {
+    
+    var result: String = ""
+    
+    for i in array{
+        if(i.isNumber){
+            result.append(i)
+        }
+        
+    }
+    
+    return Array(result);
+    
 }
 
 print(solution("123456789")) // 123-456-789
 print(solution("555372654")) // 555-372-654
 print(solution("123456789")) // 123-456-789
+print(solution("1234")) // 12-34
 
 
 
